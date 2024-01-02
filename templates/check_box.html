@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>check_box.html</h1>
+        <form  method="POST" action="{% url 'select_multiple_accessrecord' %}">
+            {% csrf_token %}
+            select Webpages:
+            <br><br>
+
+    {% for ii in Webpages %}
+         <label for="na">{{ii.name}}</label>
+         <input type="checkbox" name="na" id="na" value="{{ii.name}}">
+    {% endfor %}
+         <br><br>
+
+        <input type="submit">
+        
+        </form>
+    </center>
+</body>
+</html>
